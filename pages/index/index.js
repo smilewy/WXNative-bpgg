@@ -19,29 +19,7 @@ Page({
   },
   onLoad: function () {
     wx.request({
-      url: 'https://app3.benpaogg.com/api/api/shop/seller/',
-      header: {
-          'Content-Type': 'application/json'
-      },
-      success: (res)=> {
-        this.setData({
-          imgUrls: res.data.object
-        })
-      }
-    });
-    wx.request({
-      url: 'http://app3.benpaogg.com/api/api/shop/seller/',
-      header: {
-          'Content-Type': 'application/json'
-      },
-      success: (res)=> {
-        this.setData({
-          imgUrls: res.data.object
-        })
-      }
-    });
-    wx.request({
-      url: 'http://app2.benpaogg.com/shop/api/message/ad/SHOP/',
+      url: 'https://app2.benpaogg.com/shop/api/message/ad/SHOP/',
       header: {
           'Content-Type': 'application/json'
       },
@@ -119,5 +97,15 @@ Page({
     wx.navigateTo({
       url: `pages/goodDetail/goodDetail?id=${id}`
     })
+  },
+  addToCart:(ev)=>{
+    wx.showActionSheet({
+  itemList: ['A', 'B', 'C'],
+  success: function(res) {
+    if (!res.cancel) {
+      console.log(res.tapIndex)
+    }
+  }
+})
   }
 })

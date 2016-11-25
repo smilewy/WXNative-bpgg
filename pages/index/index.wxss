@@ -1,4 +1,5 @@
 .container{background: #f7f7f7;}
+page swiper{height:375rpx;}
 .slide-image{width: 100%;}
 .btn-sudoku{display: flex;justify-content: space-between;flex-wrap: wrap;background: #fff}
 .btn-sudoku .nav-item{width: 25%;text-align: center}
