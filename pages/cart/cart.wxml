@@ -1,9 +1,5 @@
 <view>
-<<<<<<< HEAD
     购物车1
-=======
-    购物车
     <import src="templates/templates.wxml"/>
     <template is="toCart"/>
->>>>>>> solin3017/master
 </view>
