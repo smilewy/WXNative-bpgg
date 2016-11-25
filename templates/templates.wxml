@@ -1,0 +1,50 @@
+<template name="toCart">
+  <view>
+    <view class="info">
+        <view>
+            <image src="{{object.spec[normIndex].goodsImageUrl||object.goods.goodsImageUrl}}"></image>
+        </view>
+        <view class="inofBlock">
+            <text>{{object.goods.goodsName}}</text>
+            <view wx:if="{{memberType!='WHOLESALE'}}">
+                <text hidden="{{onlyOPrice}}">{{'￥'+object.spec[0].price.toFixed(2)}}{{object.spec.length>1?'-￥'+object.spec[object.spec.length-1].price.toFixed(2):null}}</text>
+                <text hidden="{{onlyOPrice}}">{{'￥'+object.spec[normIndex].price.toFixed(2)}}</text>
+            </view>
+            <view wx:else>
+                <text ng-hide="onlyOPrice">
+                    {{'￥'+object.spec[0].wholesalePrice.toFixed(2)}}{{object.spec.length>1?'-￥'+object.spec[object.spec.length-1].wholesalePrice.toFixed(2):null}}
+                    <text>零售价{{'￥'+object.spec[0].price.toFixed(2)}}{{object.spec.length>1?'-￥'+object.spec[object.spec.length-1].price.toFixed(2):null}}</text>
+                </text>
+                <text hidden="onlyOPrice">
+                    {{'￥'+object.spec[normIndex].wholesalePrice.toFixed(2)}}
+                    <text>零售价{{'￥'+object.spec[normIndex].price.toFixed(2)}}</text>
+                </text>
+            </view>
+            <image src="src"></image>
+        </view>
+    </view>
+    <view class="norms">
+        <text class="">规格：</text>
+        <view>
+            <button class="button button-light">sss</button>
+        </view>
+    </view>
+    <view class="num">
+        <text>购买数量 <text wx:if="{{object.goods.status==3}}">(限购{{object.goodsSeckillLimitNum>=0?object.goodsSeckillLimitNum:0}}件)</text>：</text>
+        <view class="sc_chooseNum sc_goodslist fr">
+            <text class="sc_count sc_countAdd">-</text>
+            <input type="text" value="1" readonly />
+            <text class="sc_count sc_countReduce">+</text>
+        </view>
+    </view>
+    <view class="btnGroup">
+        <view wx:if="{{memberType!='WHOLESALE'}}">
+            <button class="button button-assertive">{{btnType==1?'确定':'立即购买'}}</button>
+            <button class="button button-light">{{btnType==2?'确定':'加入购物车'}}</button>
+        </view>
+        <view wx:else="{{memberType=='WHOLESALE'}}">
+            <button class="button button-assertive button-full">立即购买</button>
+        </view>
+    </view>
+  </view>
+</template>

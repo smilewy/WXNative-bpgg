@@ -1,3 +1,4 @@
+<import src="../templates/templates.wxml"/>
 <view class="container">
   <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -55,7 +56,7 @@
         </view>
         <view class="operate">
           <text>已售：{{item.saleNum}}件</text>
-          <image src="../../src/img/toCart.png" mode="aspectFit" class="icon-cart"/>
+          <image src="../../src/img/toCart.png" data-id="{{item.id}}" mode="aspectFit" class="icon-cart" catchtap="addToCart"/>
         </view>
       </navigator>
     </view>
@@ -81,4 +82,5 @@
   </view>
   <text hidden="{{!loadAnimation}}">loading...</text>
   <text hidden="{{!noMore}}">noMore...</text>
+  <template is="toCart"/>
 </view>
