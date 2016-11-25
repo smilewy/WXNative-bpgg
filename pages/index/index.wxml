@@ -1,4 +1,3 @@
-<import src="../templates/templates.wxml"/>
 <view class="container">
   <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -82,5 +81,4 @@
   </view>
   <text hidden="{{!loadAnimation}}">loading...</text>
   <text hidden="{{!noMore}}">noMore...</text>
-  <template is="toCart"/>
 </view>
