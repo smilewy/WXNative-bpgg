@@ -1,5 +1,5 @@
 <view>
     购物车1
-    <import src="templates/templates.wxml"/>
+    <import src="/templates/templates.wxml"/>
     <template is="toCart"/>
 </view>
