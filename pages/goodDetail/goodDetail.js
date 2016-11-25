@@ -11,7 +11,7 @@ Page({
   onLoad: function (data) {
     let {id} = data;
     wx.request({
-      url: `https://pt.benpaogg.com/api/api/shop/goods/${id}`,
+      url: `http://app2.benpaogg.com/shop/api/shop/goods/${id}`,
       header: {
           'Content-Type': 'application/json'
       },
@@ -29,7 +29,7 @@ Page({
       }
     });
     wx.request({
-      url: `https://pt.benpaogg.com/api/api/goods/comment/${id}/`,
+      url: `http://app2.benpaogg.com/shop/api/goods/comment/${id}/`,
       header: {
           'Content-Type': 'application/json'
       },
