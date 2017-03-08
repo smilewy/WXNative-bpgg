@@ -19,7 +19,7 @@ Page({
   },
   onLoad: function () {
     wx.request({
-      url: 'https://app2.benpaogg.com/shop/api/message/ad/SHOP/',
+      url: 'https://pt.benpaogg.com/api/api/message/ad/SHOP/',
       header: {
           'Content-Type': 'application/json'
       },
@@ -30,7 +30,7 @@ Page({
       }
     });
     wx.request({
-      url: 'http://app2.benpaogg.com/shop/api/shop/storegoods/1/',
+      url: 'http://pt.benpaogg.com/api/api/shop/storegoods/1/',
       data:{
         isGiftGoods:true,
         page:0,
@@ -46,7 +46,7 @@ Page({
       }
     });
     wx.request({
-      url: 'http://app2.benpaogg.com/shop/api/shop/storegoods/1/',
+      url: 'http://pt.benpaogg.com/api/api/shop/storegoods/1/',
       data: {
         isNewGoods:true,
         page:this.data.page,
@@ -72,7 +72,7 @@ Page({
           loadAnimation:true
         })
         wx.request({
-          url: 'http://app2.benpaogg.com/shop/api/shop/storegoods/1/',
+          url: 'http://pt.benpaogg.com/api/api/shop/storegoods/1/',
           data: {
             isNewGoods:true,
             page:this.data.page,
